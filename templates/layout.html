@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+
+
+    <!-- http://getbootstrap.com/docs/4.5/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+
+    <!-- https://favicon.io/emoji-favicons/money-mouth-face/ -->
+    <link href="/static/favicon.ico" rel="icon">
+    <link rel="stylesheet" type="text/css" href="//www.fontstatic.com/f=thuluth-decorated">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+
+    <!-- http://getbootstrap.com/docs/4.5/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+    <script src="static/script.js"></script>
+
+    <title>Ayat Search Engine: {% block title %}{% endblock %}</title>
+
+</head>
+
+<body style="background-color: black;">
+    <nav>
+        <div class="d-flex justify-content-center p-3">
+            <div class="logo" style="transform: scale(1.2) translateY(20%);">
+
+                <div class="d-flex justify-content-center align-content-center">
+                    <p id="title" style="font-size:5em; font-family: 'thuluth-decorated'; user-select: none;">محرك بحث الآيات</p>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <main class="container stick-footer" style="padding: 1rem 0; overflow: hidden;">
+        {% block main %}{% endblock %}
+    </main>
+
+    <footer style="background-color: rgb(14, 14, 14);">
+        <div class="small text-center text-muted" style="padding: 0.5rem 0 0.7rem 0; border-top: 1px solid rgb(36, 36, 36);">
+            Quran Match by <a href="https://www.omaribrahim.live">Omar Ibrahim</a> and <a href="https://yk.empire-eg.tech/">Youssef Khalil</a>. On <a href="https://github.com/omargfh/ayat-search-engine">Github</a>.
+        </div>
+    </footer>
+</body>
+
+</html>

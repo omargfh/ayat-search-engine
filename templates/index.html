@@ -1,0 +1,55 @@
+{% extends "layout.html" %} {% block title %} Home {% endblock %} {% block main %}
+<div class="loader">
+    <img src="static/loader.gif">
+</div>
+<div class="row">
+    <div class="col">
+        <div class="d-flex align-items-center justify-content-center">
+            <p style="direction: rtl;">
+                للتشكيل الصحيح برجاء زيارة
+                <a href="https://quran.ksu.edu.sa/tafseer/katheer/sura4-aya103.html">هذا الموقع</a>
+
+            </p>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+            <form role="search" method="POST" class="search-form form" action="/" style="width: 60%">
+                <input id="submit" type="submit" class="search-submit button" value="&#xf002" />
+                <label>
+                    <span class="screen-reader-text">Search for...</span>
+                    <input id="query" style="direction: rtl; color: black;" type="search" class="search-field" placeholder="برجاء مراعة التشكيل..." value="" name="word" title="" />
+                </label>
+            </form>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="form-control output" placeholder="">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(() => {
+        $("#submit").click((event) => {
+            event.preventDefault()
+            $('.loader').toggleClass("active")
+            $.post("/", {
+                "word": $("#query")[0].value
+            }, function(data) {
+                html = `<p style='direction: rtl; text-align:center;'>عدد مرات ذكر الكلمة: ${data.ayacount}</p><p style='direction: rtl;'>`
+                for (line of data.ayat.split("\n")) {
+                    console.log(line)
+                    html += `${line}<br><br>`
+                }
+                html = html + "</p>"
+                output = $(".output")
+                output[0].innerHTML = html
+                $('.loader').toggleClass("active")
+                output.addClass("active")
+            });
+        })
+    });
+</script>
+
+{% endblock %}

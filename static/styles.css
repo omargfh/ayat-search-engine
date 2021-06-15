@@ -1,0 +1,327 @@
+* {
+    color: white;
+}
+
+body {
+    background-color: black;
+    background: url("/static/pattern3-09.svg") repeat;
+    background-size: cover;
+    backdrop-filter: invert(1) brightness(0.5) saturate(0.5);
+}
+
+.stick-footer {
+    min-height: 69vh;
+}
+
+.sidebar h2 {
+    font-family: 'Cookie', cursive;
+    text-align: center;
+}
+
+.form-control:focus {
+    color: #495057;
+    border-color: #4e4e4e;
+    box-shadow: 0 0 0 0.2rem rgb(97 97 97 / 25%);
+}
+
+.form-control {
+    color: #495057;
+}
+
+i.req::before {
+    content: " *";
+    color: rgb(255, 0, 0);
+}
+
+
+/* Some search bar @Code.district */
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    padding: 3rem 0rem;
+}
+
+input[type="search"] {
+    -webkit-appearance: none !important;
+    background-clip: padding-box;
+    background-color: white;
+    vertical-align: middle;
+    border-radius: 0.25rem;
+    border: 1px solid #e0e0e5;
+    font-size: 1rem;
+    width: 100%;
+    line-height: 2;
+    padding: 0.375rem 1.25rem;
+    -webkit-transition: border-color 0.2s;
+    -moz-transition: border-color 0.2s;
+    transition: border-color 0.2s;
+}
+
+input[type="search"]:focus {
+    transition: all 0.5s;
+    border-color: #f9d342;
+    outline: none;
+}
+
+form.search-form {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: center;
+    margin-bottom: 0;
+}
+
+input.search-field {
+    margin-bottom: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: center;
+    height: 51px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+input.search-submit {
+    height: 51px;
+    margin: 0;
+    padding: 1rem 1.3rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    font-family: "Font Awesome 5 Free";
+    font-size: 1rem;
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.button {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 1.15;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    background: #f9d342;
+    color: #292826;
+    border: 1px solid transparent;
+    vertical-align: middle;
+    text-shadow: none;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+    cursor: pointer;
+    background: #d4b743;
+    color: #292826;
+    outline: 0;
+}
+
+p {
+    font-size: 15px;
+    text-align: center;
+}
+
+.output.form-control {
+    width: 60%;
+    height: 10px;
+    margin-top: 1rem;
+    color: whitesmoke;
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #161c23;
+    border-radius: 6px;
+    display: block;
+    border: none;
+    transition: none;
+    font-family: "ui-monospace", "SFMono-Regular", "SF Mono", "Consolas", "Liberation Mono", "Menlo", "monospace";
+    font-size: 12px;
+    transition: height, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    opacity: 0;
+    direction: rtl;
+    overflow: auto;
+}
+
+.output.form-control.active {
+    height: 300px;
+    opacity: 1;
+}
+
+.output::-webkit-scrollbar-track {
+    --webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.output::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.output::-webkit-scrollbar-thumb {
+    --webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+.output.form-control:focus {
+    color: whitesmoke;
+    background-color: #242930;
+    border-color: #4e4e4e;
+    box-shadow: 0 0 0 0.2rem rgb(97 97 97 / 25%);
+}
+
+
+/* Ajax Loader */
+
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.loader::before {
+    z-index: 500;
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.loader.active {
+    display: flex;
+}
+
+.loader img {
+    z-index: 1000;
+    transform: scale(1);
+}
+
+
+/* Some button I guess? */
+
+.btn-grey {
+    position: absolute;
+    width: 30px;
+    background: white;
+    height: 30px;
+    color: #c9d2da;
+    border: 1px solid;
+    background-color: #24282f;
+    border-color: #2b3035;
+    box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
+    transition: .2s cubic-bezier(.3, 0, .5, 1);
+    transition-property: color, background-color, border-color;
+    overflow: hidden;
+}
+
+.btn-grey:hover {
+    cursor: pointer;
+    background-color: #394048;
+    border-color: #8e97a0;
+    transition-duration: .1s;
+}
+
+.btn-grey svg {
+    display: inline;
+    transform: translateX(-7.5px) translateY(-4px) scale(0.75);
+    fill: #87909a;
+    vertical-align: text-bottom;
+}
+
+.btn-grey:hover svg {
+    fill: #939da8;
+}
+
+.btn-random {
+    top: 0;
+    left: calc(100%);
+}
+
+.btn-copy {
+    top: 40px;
+    left: calc(100%);
+}
+
+.btn-copy svg {
+    transform: translate(-5.8px, -6px);
+}
+
+
+/* Results of Images */
+
+.result_image_small {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin-bottom: 1rem;
+    transition: 0.5s ease;
+}
+
+.result_image_small:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .output.form-control {
+        width: 80%
+    }
+    form {
+        width: 80%!important
+    }
+}
+
+@media (max-width: 767px) {
+    .stick-footer {
+        min-height: 80vh;
+    }
+    .output.form-control {
+        width: 95%
+    }
+    form {
+        width: 95%!important
+    }
+    #title {
+        font-size: 4em!important;
+    }
+}
+
+@media (max-width: 550px) {
+    #title {
+        font-size: 3em!important;
+    }
+}
