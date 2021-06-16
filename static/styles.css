@@ -6,7 +6,7 @@ body {
     background-color: black;
     background: url("../static/pattern3-09.svg") repeat;
     background-size: cover;
-    backdrop-filter: invert(1) brightness(0.5) saturate(0.5);
+    backdrop-filter: brightness(0.5) saturate(0.5);
 }
 
 .stick-footer {
