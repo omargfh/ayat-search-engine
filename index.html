@@ -56,7 +56,7 @@
                     <p style="direction: rtl;">
                         للتشكيل الصحيح برجاء زيارة
                         <a href="https://quran.ksu.edu.sa/tafseer/katheer/sura4-aya103.html">هذا الموقع</a>
-
+                        (البحث لا يأخذ بالأعتبار التشكيل)
                     </p>
                 </div>
                 <div class="d-flex align-items-center justify-content-center">
@@ -86,17 +86,19 @@
                     async: true,
                     dataType: "text",
                     success: function(data) {
-                        db = data.split("\r\n")
+                        db = data.split(/[(\r\n)|(\n)]/)
                         $('.loader').toggleClass("active")
                     }
                 });
 
+                let normalizeText = text => {
+                    return text.replace(/([^\u0621-\u063A\u0641-\u064A\u0660-\u0669a-zA-Z 0-9])/g, '')
+                }
                 let queryParser = (word = "عَذَابًا") => {
                     const b = Array()
                     str = ""
-
                     for (let line of db) {
-                        if (line.toLowerCase().includes(word)) {
+                        if (normalizeText(line.toLowerCase()).includes(normalizeText(word))) {
                             b.push(line)
                             str = str + line + "\n"
                         }
